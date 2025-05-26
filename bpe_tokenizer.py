@@ -145,8 +145,8 @@ class BPETokenizer():
     def decode(self, ids):
         bytes_list = list()
         for id in ids:
-            if id in self.i2b:
-                bytes_list.append(self.i2b[id].decode('utf-8'))
+            if id in self.special_token_i2b:
+                bytes_list.append(self.i2b[id].encode('utf-8'))
             else:
                 bytes_list.append(self.i2b[id])
         return b''.join(bytes_list).decode('utf-8', errors='replace')
