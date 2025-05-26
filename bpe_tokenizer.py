@@ -5,7 +5,8 @@ from collections import OrderedDict
 import re
 import pickle
 
-device = torch.device('mps' if torch.mps.is_available() else 'cpu')
+# device = torch.device('mps' if torch.mps.is_available() else 'cpu')
+device = torch.device('cpu')
 print(f'Using device: {device}')
 
 class BPETokenizer():
